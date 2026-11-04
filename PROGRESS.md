@@ -13,5 +13,7 @@
 10. Phases 1–6 per MVP_BUILD_PROMPT.md; commit + update this file after each.
 
 ## Status
-- Setup done: Next.js 16.4.5 (App Router, TS, Tailwind, ESLint, src/), @supabase/supabase-js + @supabase/ssr. Scaffolded in a temp dir and copied in (repo wasn't empty).
-- Next: Phase 1 (needs Supabase env values).
+- Phase 1 code written, `npm run build` + lint clean. NOT yet verified against a database (no Supabase project yet; container can't reach *.supabase.co).
+- Decisions: `cacheComponents` off (all pages per-request); travel has arrival_flight + departure_flight; private `photos` bucket via signed URLs, public `logos` bucket; seed = `node scripts/seed.mts` (no tsx); system fonts (no Google Fonts fetch).
+- Seed prints a one-time planner login link + sample guest links. Planner email: `SEED_PLANNER_EMAIL` (default demo@guesthq.test).
+- Next: create Supabase project → apply `supabase/migrations/0001_init.sql` → `npm run seed` → verify Phase 1 → Phase 2.
